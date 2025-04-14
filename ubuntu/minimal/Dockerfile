@@ -36,7 +36,7 @@ RUN apt-get install -y zulu17=$JDK17_VERSION zulu17-jre=$JDK17_VERSION zulu17-jr
         zulu17-jdk-headless=$JDK17_VERSION zulu17-doc=$JDK17_VERSION zulu17-ca=$JDK17_VERSION zulu17-ca-jre=$JDK17_VERSION zulu17-ca-jre-headless=$JDK17_VERSION \
         zulu17-ca-jdk=$JDK17_VERSION zulu17-ca-jdk-headless=$JDK17_VERSION zulu17-ca-doc=$JDK17_VERSION
 
-RUN update-java-alternatives -s zulu8-ca-amd64
+RUN update-java-alternatives -s zulu8-ca-$(dpkg --print-architecture)
 
 # This will install the cert store provided by ubuntu openjdk in case it's needed
 # it's installed under /etc/ssl/certs/java/cacerts 
